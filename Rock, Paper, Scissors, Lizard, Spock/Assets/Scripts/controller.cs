@@ -7,6 +7,7 @@ public class controller : MonoBehaviour
     
 {
     //Declaring varibles
+    public GameObject logoObject;
     public GameObject playButton;
     public GameObject rulesButton;
     public GameObject rulesImage;
@@ -17,6 +18,7 @@ public class controller : MonoBehaviour
     void Start()
     {
         //Assign varibles with correct gameobjects
+        logoObject = GameObject.Find("Logo");
         playButton = GameObject.Find("Play");
         rulesButton = GameObject.Find("Rules");
         rulesImage = GameObject.Find("rulesImage");
@@ -50,6 +52,7 @@ public class controller : MonoBehaviour
     public void rulesOnClick()
     {
         //Hide these objects
+        logoObject.SetActive(false);
         playButton.SetActive(false);
         rulesButton.SetActive(false);
         exitButton.SetActive(false);
@@ -67,6 +70,7 @@ public class controller : MonoBehaviour
         rulesImage.SetActive(false);
 
         //Show these objects
+        logoObject.SetActive(true);
         playButton.SetActive(true);
         rulesButton.SetActive(true);
         exitButton.SetActive(true);
