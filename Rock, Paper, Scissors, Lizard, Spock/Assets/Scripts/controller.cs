@@ -12,6 +12,7 @@ public class controller : MonoBehaviour
     public GameObject rulesButton;
     public GameObject rulesImage;
     public GameObject backButton;
+    public GameObject menuButton;
     public GameObject exitButton;
 
     // Start is called before the first frame update
@@ -23,11 +24,14 @@ public class controller : MonoBehaviour
         rulesButton = GameObject.Find("Rules");
         rulesImage = GameObject.Find("rulesImage");
         backButton = GameObject.Find("Back");
+        menuButton = GameObject.Find("Menu");
         exitButton = GameObject.Find("Exit");
 
         //Hide these objects
         backButton.SetActive(false);
+        menuButton.SetActive(false);
         rulesImage.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -40,12 +44,13 @@ public class controller : MonoBehaviour
     public void playOnClick()
     {
         //Hide these objects
+        logoObject.SetActive(false);
         playButton.SetActive(false);
         rulesButton.SetActive(false);
         exitButton.SetActive(false);
 
         //Show these objects
-        backButton.SetActive(true);
+        menuButton.SetActive(true);
     }
 
     //Function for rules button click
@@ -67,6 +72,7 @@ public class controller : MonoBehaviour
     {
         //Hide these objects
         backButton.SetActive(false);
+        menuButton.SetActive(false);
         rulesImage.SetActive(false);
 
         //Show these objects
