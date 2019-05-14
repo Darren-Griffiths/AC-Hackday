@@ -16,6 +16,7 @@ public class controller : MonoBehaviour
     public GameObject exitButton;
     public GameObject okButton;
     public GameObject gameGroup;
+    public GameObject vsGroup;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,7 @@ public class controller : MonoBehaviour
         exitButton = GameObject.Find("Exit");
         okButton = GameObject.Find("okButton");
         gameGroup = GameObject.Find("Game");
+        vsGroup = GameObject.Find("VS");
 
         //Hide these objects
         backButton.SetActive(false);
@@ -37,7 +39,7 @@ public class controller : MonoBehaviour
         rulesImage.SetActive(false);
         okButton.SetActive(false);
         gameGroup.SetActive(false);
-
+        vsGroup.SetActive(false);
     }
 
     // Update is called once per frame
@@ -91,6 +93,27 @@ public class controller : MonoBehaviour
 
     //Function for exit button click
     public void exitOnClick()
+    {
+        //Quits the game
+        Application.Quit();
+    }
+
+    //Function for exit button click
+    public void menuOnClick()
+    {
+        //Hide these objects
+        gameGroup.SetActive(false);
+        menuButton.SetActive(false);
+
+        //Show these objects
+        logoObject.SetActive(true);
+        playButton.SetActive(true);
+        rulesButton.SetActive(true);
+        exitButton.SetActive(true);
+    }
+
+    //Function for exit button click
+    public void okOnClick()
     {
         //Quits the game
         Application.Quit();
