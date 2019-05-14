@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class mouseover : MonoBehaviour
 {
+    //Hold String for chosen gesture
     public string chosenGesture;
+
+    //Hold Game Objects
     public GameObject Rock;
     public GameObject Paper;
     public GameObject Scissors;
@@ -12,15 +15,24 @@ public class mouseover : MonoBehaviour
     public GameObject Spock;
     public GameObject okButton;
 
+    //Declare controller script
     private controller controllerScript;
+    public GameObject controller;
 
+    //Call on first frame
     private void Start()
     {
+        //Find Game Objects
         Rock = GameObject.Find("Rock");
         Paper = GameObject.Find("Paper");
         Scissors = GameObject.Find("Scissors");
         Lizard = GameObject.Find("Lizard");
         Spock = GameObject.Find("Spock");
+        //Find controller game object
+        controller = GameObject.Find("Controller");
+        //Link controller script to game object
+        controllerScript = controller.GetComponent<controller>();
+        //Link okButton to controllers declaration
         okButton = controllerScript.okButton;
     }
 
@@ -83,7 +95,7 @@ public class mouseover : MonoBehaviour
         }
 
         //Enable ok button to continue the game
-        okButton.SetActive(true);
+        controllerScript.okButton.SetActive(true);
     }
 
     //When chosen is called, this function will store the name of the object clicked

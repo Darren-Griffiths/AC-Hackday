@@ -15,6 +15,7 @@ public class controller : MonoBehaviour
     public GameObject menuButton;
     public GameObject exitButton;
     public GameObject okButton;
+    public GameObject gameGroup;
 
     // Start is called before the first frame update
     void Start()
@@ -28,12 +29,14 @@ public class controller : MonoBehaviour
         menuButton = GameObject.Find("Menu");
         exitButton = GameObject.Find("Exit");
         okButton = GameObject.Find("okButton");
+        gameGroup = GameObject.Find("Game");
 
         //Hide these objects
         backButton.SetActive(false);
         menuButton.SetActive(false);
         rulesImage.SetActive(false);
         okButton.SetActive(false);
+        gameGroup.SetActive(false);
 
     }
 
@@ -54,6 +57,7 @@ public class controller : MonoBehaviour
 
         //Show these objects
         menuButton.SetActive(true);
+        gameGroup.SetActive(true);
     }
 
     //Function for rules button click
