@@ -97,6 +97,9 @@ public class vs : MonoBehaviour
     {
         //Set timer to start
         startfightTimer = true;
+        //Start a timer for AI Gesture selection
+        aiScript.Invoke("aiGesture", 3);
+
     }
 
     //Display count down
@@ -125,7 +128,6 @@ public class vs : MonoBehaviour
         {
             //Display fight
             controllerScript.ftText.text = "Fight";
-
         }
     }
 
