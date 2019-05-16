@@ -435,7 +435,7 @@ GameObject:
   - component: {fileID: 45960742}
   - component: {fileID: 45960741}
   m_Layer: 5
-  m_Name: Timer
+  m_Name: FightTimer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -493,7 +493,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 3
+  m_Text: 
 --- !u!222 &45960742
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1376,6 +1376,8 @@ MonoBehaviour:
   scissorsSelectAI: {fileID: 0}
   lizardSelectAI: {fileID: 0}
   spockSelectAI: {fileID: 0}
+  ftText: {fileID: 0}
+  ftTextobject: {fileID: 0}
   vsObject: {fileID: 0}
   mouseObject: {fileID: 0}
 --- !u!4 &378488760
@@ -1425,6 +1427,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
+  startfightTimer: 0
+  fightTimer: 3
 --- !u!1 &383986022
 GameObject:
   m_ObjectHideFlags: 0

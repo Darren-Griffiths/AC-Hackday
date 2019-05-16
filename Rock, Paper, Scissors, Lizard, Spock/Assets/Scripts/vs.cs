@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class vs : MonoBehaviour
 {
     //Declare cotnroller script
     private controller controllerScript;
     public GameObject controller;
+
+    public bool startfightTimer;
+    public float fightTimer = 3f;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +24,15 @@ public class vs : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //keep track and display timer
+        displayftCount();
+
+        //start the timer when timer is switched on
+        if (startfightTimer == true && fightTimer >= 0)
+        {
+            fightTimer -= Time.deltaTime;
+            Debug.Log(fightTimer);
+        }
     }
 
     //if conditions to select gesture to display
@@ -72,4 +84,40 @@ public class vs : MonoBehaviour
             controllerScript.lizardSelect.SetActive(false);
         }
     }
+    //Start timer
+    public void startFT()
+    {
+        //Set timer to start
+        startfightTimer = true;
+    }
+
+    //Display count down
+    public void displayftCount()
+    {
+        //If timer is 3
+        if (fightTimer >=2 && startfightTimer == true)
+        {
+            //Display 3
+            controllerScript.ftText.text = "3";
+        }
+        //if timer is 2
+        if (fightTimer >=1 && fightTimer <=2 && startfightTimer == true)
+        {
+            //Display 2
+            controllerScript.ftText.text = "2";
+        }
+        //If timer is 1
+        if (fightTimer >=0 && fightTimer <=1 && startfightTimer == true)
+        {
+            //Display 1
+            controllerScript.ftText.text = "1";
+        }
+        //If timer is 0
+        if (fightTimer <= 0 && startfightTimer == true)
+        {
+            //Display fight
+            controllerScript.ftText.text = "Fight";
+        }
+    }
+
 }

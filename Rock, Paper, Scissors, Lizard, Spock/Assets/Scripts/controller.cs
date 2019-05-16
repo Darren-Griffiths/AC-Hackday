@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class controller : MonoBehaviour
 
@@ -30,6 +31,10 @@ public class controller : MonoBehaviour
     public GameObject lizardSelectAI;
     public GameObject spockSelectAI;
 
+    //Declaring Text
+    public Text ftText;
+    public GameObject ftTextobject;
+
     //Obtaining vs script
     private vs vsScript;
     public GameObject vsObject;
@@ -41,6 +46,7 @@ public class controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         //Assign varibles with correct gameobjects
         logoObject = GameObject.Find("Logo");
         playButton = GameObject.Find("Play");
@@ -66,6 +72,12 @@ public class controller : MonoBehaviour
         scissorsSelectAI = GameObject.Find("ScissorsSelectGroupAI");
         lizardSelectAI = GameObject.Find("LizardSelectGroupAI");
         spockSelectAI = GameObject.Find("SpockSelectGroupAI");
+
+        //Find text
+        ftTextobject = GameObject.Find("FightTimer");
+        ftText = ftTextobject.GetComponent<Text>();
+
+        ftText.text = "Fight";
 
         //Hide these objects
         backButton.SetActive(false);
@@ -170,5 +182,7 @@ public class controller : MonoBehaviour
         vsGroup.SetActive(true);
         //Carry out selection function on vs script
         vsScript.Selection();
+        //Switch the fight timer on
+        vsScript.startFT();
     }
 }
