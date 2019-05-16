@@ -39,6 +39,10 @@ public class controller : MonoBehaviour
     public Text lost;
     public GameObject lostText;
 
+    public int drawInt;
+    public int wonInt;
+    public int lostInt;
+
     //Declaring Text
     public Text ftText;
     public GameObject ftTextobject;
@@ -123,6 +127,7 @@ public class controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Display uptodate stats
         win.text = "Won: " + PlayerPrefs.GetInt("wins");
         draw.text = "Drew: " + PlayerPrefs.GetInt("draws");
         lost.text = "Lost: " + PlayerPrefs.GetInt("lost");
@@ -273,5 +278,18 @@ public class controller : MonoBehaviour
             aiScript.aichosenGesture = "spock";
             PlayerPrefs.SetString("aichosenGesture", aiScript.aichosenGesture);
         }
+    }
+
+    public void drawaddOn()
+    {
+        drawInt = PlayerPrefs.GetInt("draws") + 1;
+    }
+    public void wonaddOn()
+    {
+        wonInt = PlayerPrefs.GetInt("wins") + 1;
+    }
+    public void lostaddOn()
+    {
+        lostInt = PlayerPrefs.GetInt("lost") + 1;
     }
 }
