@@ -31,6 +31,14 @@ public class controller : MonoBehaviour
     public GameObject lizardSelectAI;
     public GameObject spockSelectAI;
 
+    //Declare stats
+    public Text win;
+    public GameObject winText;
+    public Text draw;
+    public GameObject drawText;
+    public Text lost;
+    public GameObject lostText;
+
     //Declaring Text
     public Text ftText;
     public GameObject ftTextobject;
@@ -79,10 +87,19 @@ public class controller : MonoBehaviour
         spockSelectAI = GameObject.Find("SpockSelectGroupAI");
 
         //Find text
+        winText = GameObject.Find("Wins");
+        win = winText.GetComponent<Text>();
+
+        drawText = GameObject.Find("Draws");
+        draw = drawText.GetComponent<Text>();
+
+        lostText = GameObject.Find("Lost");
+        lost = lostText.GetComponent<Text>();
+
         ftTextobject = GameObject.Find("FightTimer");
         ftText = ftTextobject.GetComponent<Text>();
 
-        ftText.text = "Fight";
+        //ftText.text = "Fight";
 
         //Hide these objects
         backButton.SetActive(false);
@@ -106,7 +123,9 @@ public class controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        win.text = "Won: " + PlayerPrefs.GetInt("wins");
+        draw.text = "Drew: " + PlayerPrefs.GetInt("draws");
+        lost.text = "Lost: " + PlayerPrefs.GetInt("lost");
     }
 
     //Function for play button click
