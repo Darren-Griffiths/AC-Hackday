@@ -193,7 +193,6 @@ public class controller : MonoBehaviour
         lizardSelect.SetActive(true);
         spockSelect.SetActive(true);
 
-
         //Reset fight timer
         vsScript.startfightTimer = false;
         vsScript.fightTimer = 3f;
@@ -221,6 +220,7 @@ public class controller : MonoBehaviour
         scissorsSelectAI.SetActive(false);
         lizardSelectAI.SetActive(false);
         spockSelectAI.SetActive(false);
+
         //Show these objects
         vsGroup.SetActive(true);
         //Carry out selection function on vs script
@@ -280,16 +280,22 @@ public class controller : MonoBehaviour
         }
     }
 
+    //Function to update stats
     public void drawaddOn()
     {
+        //Retrieves the stat from database and adds 1
         drawInt = PlayerPrefs.GetInt("draws") + 1;
     }
+    //Function to update stats
     public void wonaddOn()
     {
+        //Retrieves the stat from database and adds 1
         wonInt = PlayerPrefs.GetInt("wins") + 1;
     }
+    //Function to update stats
     public void lostaddOn()
     {
+        //Retrieves the stat from database and adds 1
         lostInt = PlayerPrefs.GetInt("lost") + 1;
     }
 }
