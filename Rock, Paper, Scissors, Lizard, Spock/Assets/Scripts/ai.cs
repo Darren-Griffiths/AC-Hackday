@@ -6,11 +6,13 @@ public class ai : MonoBehaviour
 {
 
     public int gestureAI;
-
+    public string aichosenGesture;
 
     //Function to call ai Gesture selection at random
     public void aiGesture()
     {
+        //Write AI selection to hold choice
+        PlayerPrefs.SetString("aichosenGesture", aichosenGesture);
         // use ArrayList approach
         ArrayList aiSelection = new ArrayList();
         aiSelection.Add("rockAI");

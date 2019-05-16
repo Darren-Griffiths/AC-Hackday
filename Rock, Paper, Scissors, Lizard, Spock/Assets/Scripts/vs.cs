@@ -13,6 +13,10 @@ public class vs : MonoBehaviour
     private ai aiScript;
     public GameObject aiObject;
 
+    //Declare outcome Script
+    private outcome outcomeScript;
+    public GameObject outcomeObject;
+
     public bool startfightTimer;
     public float fightTimer = 3f;
 
@@ -27,6 +31,9 @@ public class vs : MonoBehaviour
         aiObject = GameObject.Find("Controller");
         //Get ai Script
         aiScript = aiObject.GetComponent<ai>();
+        //Get outcome object
+        outcomeObject = GameObject.Find("Controller");
+        outcomeScript = outcomeObject.GetComponent<outcome>();
     }
 
     // Update is called once per frame
@@ -99,8 +106,8 @@ public class vs : MonoBehaviour
         startfightTimer = true;
         //Start a timer for AI Gesture selection
         aiScript.Invoke("aiGesture", 3);
-        controllerScript.Invoke("checkaiGesture", 3);
-
+        controllerScript.Invoke("checkaiGesture", 4);
+        outcomeScript.Invoke("result", 4);
     }
 
     //Display count down

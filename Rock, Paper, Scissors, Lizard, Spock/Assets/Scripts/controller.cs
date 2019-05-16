@@ -100,6 +100,7 @@ public class controller : MonoBehaviour
 
         //Get ai Script
         aiScript = aiObject.GetComponent<ai>();
+
     }
 
     // Update is called once per frame
@@ -204,27 +205,54 @@ public class controller : MonoBehaviour
         vsScript.startFT();
     }
 
+    //Function to check which gesture was randomly selected to then display on screen
     public void checkaiGesture()
     {
+        vsScript.startfightTimer = false;
+        //if selected gesture is 0 then it = rock
         if (aiScript.gestureAI == 0)
         {
+            //Display icon
             rockSelectAI.SetActive(true);
+            //Write chosen AI gesture to database
+            aiScript.aichosenGesture = "rock";
+            PlayerPrefs.SetString("aichosenGesture", aiScript.aichosenGesture);
         }
+        //if selected gesture is 1 then it = paper
         if (aiScript.gestureAI == 1)
         {
+            //Display icon
             paperSelectAI.SetActive(true);
+            //Write chosen AI gesture to database
+            aiScript.aichosenGesture = "paper";
+            PlayerPrefs.SetString("aichosenGesture", aiScript.aichosenGesture);
         }
+        //if selected gesture is 2 then it = scissors
         if (aiScript.gestureAI == 2)
         {
+            //Display icon
             scissorsSelectAI.SetActive(true);
+            //Write chosen AI gesture to database
+            aiScript.aichosenGesture = "scissors";
+            PlayerPrefs.SetString("aichosenGesture", aiScript.aichosenGesture);
         }
+        //if selected gesture is 3 then it = lizard
         if (aiScript.gestureAI == 3)
         {
+            //Display icon
             lizardSelectAI.SetActive(true);
+            //Write chosen AI gesture to database
+            aiScript.aichosenGesture = "liazrd";
+            PlayerPrefs.SetString("aichosenGesture", aiScript.aichosenGesture);
         }
+        //if selected gesture is 4 then it = spock
         if (aiScript.gestureAI == 4)
         {
+            //Display icon
             spockSelectAI.SetActive(true);
+            //Write chosen AI gesture to database
+            aiScript.aichosenGesture = "spock";
+            PlayerPrefs.SetString("aichosenGesture", aiScript.aichosenGesture);
         }
     }
 }
