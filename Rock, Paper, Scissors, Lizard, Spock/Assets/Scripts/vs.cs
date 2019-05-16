@@ -5,9 +5,13 @@ using UnityEngine.UI;
 
 public class vs : MonoBehaviour
 {
-    //Declare cotnroller script
+    //Declare controller script
     private controller controllerScript;
     public GameObject controller;
+
+    //Declare AI script
+    private ai aiScript;
+    public GameObject aiObject;
 
     public bool startfightTimer;
     public float fightTimer = 3f;
@@ -19,6 +23,10 @@ public class vs : MonoBehaviour
         controller = GameObject.Find("Controller");
         //Get controller script from object
         controllerScript = controller.GetComponent<controller>();
+        //Get ai object
+        aiObject = GameObject.Find("Controller");
+        //Get ai Script
+        aiScript = aiObject.GetComponent<ai>();
     }
 
     // Update is called once per frame
@@ -117,6 +125,7 @@ public class vs : MonoBehaviour
         {
             //Display fight
             controllerScript.ftText.text = "Fight";
+
         }
     }
 
