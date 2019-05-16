@@ -160,6 +160,10 @@ public class controller : MonoBehaviour
         lizardSelect.SetActive(true);
         spockSelect.SetActive(true);
 
+        //Reset fight timer
+        vsScript.startfightTimer = false;
+        vsScript.fightTimer = 3f;
+
         //Hide these objects
         gameGroup.SetActive(false);
         vsGroup.SetActive(false);
