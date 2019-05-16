@@ -18,6 +18,26 @@ public class controller : MonoBehaviour
     public GameObject gameGroup;
     public GameObject vsGroup;
 
+    //Declaring varibles for selection state
+    public GameObject rockSelect;
+    public GameObject paperSelect;
+    public GameObject scissorsSelect;
+    public GameObject lizardSelect;
+    public GameObject spockSelect;
+    public GameObject rockSelectAI;
+    public GameObject paperSelectAI;
+    public GameObject scissorsSelectAI;
+    public GameObject lizardSelectAI;
+    public GameObject spockSelectAI;
+
+    //Obtaining vs script
+    private vs vsScript;
+    public GameObject vsObject;
+
+    //Obtaining mouse script
+    private mouseover mouseScript;
+    public GameObject mouseObject;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +52,20 @@ public class controller : MonoBehaviour
         okButton = GameObject.Find("okButton");
         gameGroup = GameObject.Find("Game");
         vsGroup = GameObject.Find("VS");
+        vsObject = GameObject.Find("Controller");
+        mouseObject = GameObject.Find("Controller");
+
+        //Assign varibles with correct gameobjects for selection state
+        rockSelect = GameObject.Find("RockSelectGroup");
+        paperSelect = GameObject.Find("PaperSelectGroup");
+        scissorsSelect = GameObject.Find("ScissorsSelectGroup");
+        lizardSelect = GameObject.Find("LizardSelectGroup");
+        spockSelect = GameObject.Find("SpockSelectGroup");
+        rockSelectAI = GameObject.Find("RockSelectGroupAI");
+        paperSelectAI = GameObject.Find("PaperSelectGroupAI");
+        scissorsSelectAI = GameObject.Find("ScissorsSelectGroupAI");
+        lizardSelectAI = GameObject.Find("LizardSelectGroupAI");
+        spockSelectAI = GameObject.Find("SpockSelectGroupAI");
 
         //Hide these objects
         backButton.SetActive(false);
@@ -40,6 +74,12 @@ public class controller : MonoBehaviour
         okButton.SetActive(false);
         gameGroup.SetActive(false);
         vsGroup.SetActive(false);
+
+        //Get vs Script
+        vsScript = vsObject.GetComponent<vs>();
+
+        //Get mouse Script
+        mouseScript = mouseObject.GetComponent<mouseover>();
     }
 
     // Update is called once per frame
@@ -101,9 +141,18 @@ public class controller : MonoBehaviour
     //Function for exit button click
     public void menuOnClick()
     {
+        //Return the selection activity so player can replay
+        rockSelect.SetActive(true);
+        paperSelect.SetActive(true);
+        scissorsSelect.SetActive(true);
+        lizardSelect.SetActive(true);
+        spockSelect.SetActive(true);
+
         //Hide these objects
         gameGroup.SetActive(false);
+        vsGroup.SetActive(false);
         menuButton.SetActive(false);
+        okButton.SetActive(false);
 
         //Show these objects
         logoObject.SetActive(true);
@@ -115,7 +164,11 @@ public class controller : MonoBehaviour
     //Function for exit button click
     public void okOnClick()
     {
-        //Quits the game
-        Application.Quit();
+        //Hide these objects
+        gameGroup.SetActive(false);
+        //Show these objects
+        vsGroup.SetActive(true);
+        //Carry out selection function on vs script
+        vsScript.Selection();
     }
 }

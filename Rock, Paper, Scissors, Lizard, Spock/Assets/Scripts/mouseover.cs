@@ -20,7 +20,7 @@ public class mouseover : MonoBehaviour
     public GameObject controller;
 
     //Call on first frame
-    private void Start()
+    void Start()
     {
         //Find Game Objects
         Rock = GameObject.Find("Rock");
@@ -28,6 +28,7 @@ public class mouseover : MonoBehaviour
         Scissors = GameObject.Find("Scissors");
         Lizard = GameObject.Find("Lizard");
         Spock = GameObject.Find("Spock");
+
         //Find controller game object
         controller = GameObject.Find("Controller");
         //Link controller script to game object
