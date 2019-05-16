@@ -43,6 +43,10 @@ public class controller : MonoBehaviour
     private mouseover mouseScript;
     public GameObject mouseObject;
 
+    //Obtaining AI script
+    private ai aiScript;
+    public GameObject aiObject;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,6 +64,7 @@ public class controller : MonoBehaviour
         vsGroup = GameObject.Find("VS");
         vsObject = GameObject.Find("Controller");
         mouseObject = GameObject.Find("Controller");
+        aiObject = GameObject.Find("Controller");
 
         //Assign varibles with correct gameobjects for selection state
         rockSelect = GameObject.Find("RockSelectGroup");
@@ -92,6 +97,9 @@ public class controller : MonoBehaviour
 
         //Get mouse Script
         mouseScript = mouseObject.GetComponent<mouseover>();
+
+        //Get ai Script
+        aiScript = aiObject.GetComponent<ai>();
     }
 
     // Update is called once per frame
@@ -160,6 +168,7 @@ public class controller : MonoBehaviour
         lizardSelect.SetActive(true);
         spockSelect.SetActive(true);
 
+
         //Reset fight timer
         vsScript.startfightTimer = false;
         vsScript.fightTimer = 3f;
@@ -182,11 +191,40 @@ public class controller : MonoBehaviour
     {
         //Hide these objects
         gameGroup.SetActive(false);
+        rockSelectAI.SetActive(false);
+        paperSelectAI.SetActive(false);
+        scissorsSelectAI.SetActive(false);
+        lizardSelectAI.SetActive(false);
+        spockSelectAI.SetActive(false);
         //Show these objects
         vsGroup.SetActive(true);
         //Carry out selection function on vs script
         vsScript.Selection();
         //Switch the fight timer on
         vsScript.startFT();
+    }
+
+    public void checkaiGesture()
+    {
+        if (aiScript.gestureAI == 0)
+        {
+            rockSelectAI.SetActive(true);
+        }
+        if (aiScript.gestureAI == 1)
+        {
+            paperSelectAI.SetActive(true);
+        }
+        if (aiScript.gestureAI == 2)
+        {
+            scissorsSelectAI.SetActive(true);
+        }
+        if (aiScript.gestureAI == 3)
+        {
+            lizardSelectAI.SetActive(true);
+        }
+        if (aiScript.gestureAI == 4)
+        {
+            spockSelectAI.SetActive(true);
+        }
     }
 }

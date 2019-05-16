@@ -1337,6 +1337,7 @@ GameObject:
   - component: {fileID: 378488759}
   - component: {fileID: 378488761}
   - component: {fileID: 378488762}
+  - component: {fileID: 378488763}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -1380,6 +1381,7 @@ MonoBehaviour:
   ftTextobject: {fileID: 0}
   vsObject: {fileID: 0}
   mouseObject: {fileID: 0}
+  aiObject: {fileID: 0}
 --- !u!4 &378488760
 Transform:
   m_ObjectHideFlags: 0
@@ -1427,8 +1429,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
+  aiObject: {fileID: 0}
   startfightTimer: 0
   fightTimer: 3
+--- !u!114 &378488763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378488758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c845979ddc0e9264a91dbdb471f87ced, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gestureAI: 0
 --- !u!1 &383986022
 GameObject:
   m_ObjectHideFlags: 0

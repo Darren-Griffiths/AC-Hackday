@@ -21,7 +21,5 @@ public class ai : MonoBehaviour
 
         //AI picks a random gesture
         gestureAI = Random.Range(0, aiSelection.Count);
-
-        Debug.Log(gestureAI);
     }
 }

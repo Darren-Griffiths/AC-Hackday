@@ -99,6 +99,7 @@ public class vs : MonoBehaviour
         startfightTimer = true;
         //Start a timer for AI Gesture selection
         aiScript.Invoke("aiGesture", 3);
+        controllerScript.Invoke("checkaiGesture", 3);
 
     }
 
