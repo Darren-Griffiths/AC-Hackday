@@ -266,7 +266,7 @@ public class controller : MonoBehaviour
             //Display icon
             lizardSelectAI.SetActive(true);
             //Write chosen AI gesture to database
-            aiScript.aichosenGesture = "liazrd";
+            aiScript.aichosenGesture = "lizard";
             PlayerPrefs.SetString("aichosenGesture", aiScript.aichosenGesture);
         }
         //if selected gesture is 4 then it = spock
